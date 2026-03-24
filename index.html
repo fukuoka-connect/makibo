@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MAKIBO｜焚き火好きの駆け込み寺。広葉樹の薪を1束500円から無人販売</title>
+  <title>焚き火 × MAKIBO｜広葉樹の薪を1束500円から無人販売</title>
   <meta name="description" content="MAKIBOは焚き火好きのための薪屋。広葉樹1束500円〜の無人販売。QR決済で24時間いつでも購入可。独自ルート仕入れだからできる業界最安クラスの価格と火持ちの良さ。">
   <meta name="keywords" content="薪,販売,キャンプ,BBQ,焚き火,広葉樹,無人販売,ビザールプランツ">
 
   <!-- OGP -->
-  <meta property="og:title" content="MAKIBO｜焚き火好きの駆け込み寺。広葉樹1束500円〜">
+  <meta property="og:title" content="焚き火 × MAKIBO｜広葉樹の薪を1束500円から無人販売">
   <meta property="og:description" content="火持ちの良い広葉樹の薪を1束500円から無人販売。独自仕入れルートで業界最安クラス。QR決済対応で24時間購入OK。">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ja_JP">
@@ -93,58 +93,84 @@
     }
     .nav-cta:hover { background: var(--ember-deep) !important; transition: background 0.4s ease-out; }
 
-    /* ── HERO (フルスクリーン・雑誌風) ── */
+    /* ── HERO (焚き火 × MAKIBO 大胆構図) ── */
     .hero {
       position: relative;
       min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background: var(--dark);
       overflow: hidden;
     }
-    .hero-visual {
-      position: relative;
+    .hero-bg-img {
+      position: absolute;
+      inset: 0;
       background: var(--dark-mid);
-      min-height: 100vh;
-      display: flex; align-items: center; justify-content: center;
       /* alt: 夜のキャンプサイトで燃える焚き火と積み上げた薪 */
-      color: rgba(255,255,255,0.15);
-      font-size: 0.9rem;
     }
-    .hero-visual::after {
+    .hero-bg-img::after {
       content: '';
       position: absolute;
-      right: 0; top: 0; bottom: 0;
-      width: 120px;
-      background: linear-gradient(90deg, transparent, var(--dark));
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 60%, rgba(28,22,18,0.3) 0%, rgba(28,22,18,0.85) 70%);
     }
-    .hero-copy {
-      display: flex; flex-direction: column;
-      justify-content: center;
-      padding: 100px 48px 80px 40px;
+    .hero-center {
       position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 120px 24px 80px;
+      max-width: 800px;
     }
-    .hero-eyecatch {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.65rem; letter-spacing: 0.35em;
-      color: var(--ember); margin-bottom: 24px;
-      text-transform: uppercase;
+    .hero-title-block {
+      margin-bottom: 32px;
     }
-    .hero-catch {
+    .hero-title-top {
       font-family: 'Zen Old Mincho', serif;
-      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
-      font-weight: 900; color: #fff;
-      line-height: 1.6; margin-bottom: 24px;
+      font-size: clamp(2.4rem, 7vw, 5rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: 0.08em;
+    }
+    .hero-title-x {
+      font-family: 'DM Sans', sans-serif;
+      display: block;
+      font-size: clamp(1rem, 2.5vw, 1.6rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--ember);
+      letter-spacing: 0.4em;
+      margin: 16px 0;
+    }
+    .hero-title-bottom {
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(2.8rem, 8vw, 6rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+      letter-spacing: 0.18em;
+    }
+    .hero-sub-line {
+      font-family: 'Zen Old Mincho', serif;
+      font-size: clamp(0.82rem, 1.8vw, 1rem);
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.15em;
+      margin-top: 20px;
+      font-weight: 400;
     }
     .hero-lead {
       font-size: 0.88rem;
-      color: rgba(255,255,255,0.6);
+      color: rgba(255,255,255,0.55);
       line-height: 2.1;
       margin-bottom: 32px;
-      max-width: 400px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .hero-price-block {
       display: flex; align-items: baseline; gap: 8px;
+      justify-content: center;
       margin-bottom: 32px;
     }
     .hero-yen {
@@ -493,10 +519,7 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
-      .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-visual { min-height: 50vh; }
-      .hero-visual::after { display: none; }
-      .hero-copy { padding: 48px 24px 56px; }
+      .hero-center { padding: 100px 20px 60px; }
       .hero-yen { font-size: 2.6rem; }
       nav a:not(.nav-cta) { display: none; }
       .sec { padding: 60px 0; }
@@ -536,12 +559,14 @@
 
 <!-- ── HERO ── -->
 <section class="hero">
-  <div class="hero-visual" role="img" aria-label="夜のキャンプサイトで燃える焚き火と積み上げられた広葉樹の薪">
-    [焚き火 × 薪の写真]
-  </div>
-  <div class="hero-copy">
-    <div class="hero-eyecatch">Firewood &amp; Bizarre Plants</div>
-    <h1 class="hero-catch">焚き火好き<span class="sm">の</span><br>駆<span class="sm">け</span>込<span class="sm">み</span>寺。</h1>
+  <div class="hero-bg-img" role="img" aria-label="夜のキャンプサイトで燃える焚き火と積み上げられた広葉樹の薪"></div>
+  <div class="hero-center">
+    <div class="hero-title-block">
+      <div class="hero-title-top">焚き火</div>
+      <span class="hero-title-x">&times;</span>
+      <div class="hero-title-bottom">MAKIBO</div>
+      <p class="hero-sub-line">広葉樹<span class="sm">の</span>薪<span class="sm">を</span>、業界最安<span class="sm">クラスで。</span></p>
+    </div>
     <p class="hero-lead">
       ホームセンターの薪、高いのにすぐ燃え尽きる。<br>
       MAKIBOの広葉樹薪は、独自仕入れだから安い。<br>
@@ -551,7 +576,7 @@
       <span class="hero-yen">500</span>
       <span class="hero-yen-info">円〜 / 広葉樹1束<br>QR決済・24時間OK</span>
     </div>
-    <div class="hero-btns">
+    <div class="hero-btns" style="justify-content:center;">
       <a href="#access" class="btn btn-ember" data-cta="hero">場所を見る</a>
       <a href="#lineup" class="btn btn-ghost">商品一覧</a>
     </div>
