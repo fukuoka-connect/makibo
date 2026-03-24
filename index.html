@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAKIBO｜広葉樹1束500円〜 薪の無人販売・キャンプ用薪・ビザールプランツ</title>
+  <meta name="description" content="MAKIBOは広葉樹の薪を1束500円から無人販売。独自ルートの原木仕入れで業界最安クラスを実現。QR決済対応・24時間購入OK。火持ちの良い広葉樹薪でキャンプ・BBQをもっと楽しく。">
+  <meta name="keywords" content="薪,販売,キャンプ,BBQ,広葉樹,無人販売,薪販売,ビザールプランツ">
+
+  <!-- OGP -->
+  <meta property="og:title" content="MAKIBO｜広葉樹1束500円〜 薪の無人販売">
+  <meta property="og:description" content="火持ちの良い広葉樹の薪を1束500円から。独自仕入れルートで業界最安クラス。QR決済対応の無人販売で24時間いつでも購入できます。">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="MAKIBO">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- GA4: ここに挿入 -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Shippori+Mincho:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #FAF7F2;
+      --surface: #FFFFFF;
+      --bark: #3E2C1E;
+      --bark-mid: #5C4A3A;
+      --bark-light: #A89888;
+      --sand: #D4C4AE;
+      --sand-light: #EDE6DA;
+      --cream: #F5F0E8;
+      --flame: #D4652A;
+      --flame-dark: #B8521E;
+      --flame-light: #FFF4EE;
+      --leaf: #5A7A52;
+      --leaf-light: #EDF5EB;
+      --border: rgba(62,44,30,0.1);
+      --shadow-sm: 0 2px 8px rgba(62,44,30,0.06);
+      --shadow-md: 0 8px 28px rgba(62,44,30,0.1);
+      --r: 8px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--bg);
+      color: var(--bark);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ── sm class（CLAUDE.md必須ルール） ── */
+    h1 .sm, h2 .sm, .hero-catch .sm { font-size: 0.78em; }
+
+    /* ── UTILITY ── */
+    .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+    .section-pad { padding: 80px 0; }
+    .text-center { text-align: center; }
+
+    .section-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      color: var(--bark-light);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .section-heading {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--bark);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 0.9rem;
+      color: var(--bark-mid);
+      max-width: 600px;
+      margin: 0 auto 40px;
+      line-height: 2;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(250,247,242,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.4s;
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--bark);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+    }
+    nav { display: flex; gap: 20px; align-items: center; }
+    nav a {
+      color: var(--bark-mid);
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 500;
+      transition: color 0.2s ease-out;
+    }
+    nav a:hover { color: var(--bark); transition: color 0.4s ease-out; }
+    .nav-cta {
+      background: var(--flame) !important;
+      color: #fff !important;
+      padding: 8px 20px;
+      border-radius: var(--r);
+      font-weight: 700;
+      transition: background 0.2s ease-out, transform 0.2s ease-out;
+    }
+    .nav-cta:hover {
+      background: var(--flame-dark) !important;
+      transform: translateY(-1px);
+      transition: background 0.4s ease-out, transform 0.4s ease-out;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: var(--bark);
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, rgba(62,44,30,0.85) 0%, rgba(62,44,30,0.55) 60%, rgba(62,44,30,0.4) 100%);
+      z-index: 1;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: var(--bark) url('') center center / cover no-repeat;
+      /* alt: 積み上げられた広葉樹の薪とキャンプの焚き火の写真 */
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 120px 24px 80px;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--flame);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 30px;
+      letter-spacing: 0.08em;
+      margin-bottom: 24px;
+    }
+    .hero-catch {
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    .hero-sub {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 500px;
+      line-height: 2;
+      margin-bottom: 28px;
+    }
+    .hero-price {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 6px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: var(--r);
+      padding: 14px 24px;
+      margin-bottom: 32px;
+    }
+    .hero-price-label {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.7);
+    }
+    .hero-price-num {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+    }
+    .hero-price-unit {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.8);
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 36px;
+    }
+    .hero-tag {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.9);
+      padding: 7px 16px;
+      border-radius: 30px;
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 15px 32px;
+      border-radius: var(--r);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+      transition: all 0.2s ease-out;
+    }
+    .btn:hover { transition: all 0.4s ease-out; }
+    .btn-primary {
+      background: var(--flame);
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(212,101,42,0.25);
+    }
+    .btn-primary:hover {
+      background: var(--flame-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(212,101,42,0.35);
+    }
+    .btn-outline-w {
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255,255,255,0.4);
+    }
+    .btn-outline-w:hover {
+      border-color: #fff;
+      background: rgba(255,255,255,0.08);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--flame);
+      border: 2px solid var(--flame);
+    }
+    .btn-outline:hover {
+      background: var(--flame-light);
+    }
+
+    /* ── PAIN（悩み共感） ── */
+    .pain { background: var(--surface); }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .pain-card {
+      background: var(--cream);
+      border-radius: var(--r);
+      padding: 28px 24px;
+      border-left: 4px solid var(--sand);
+    }
+    .pain-card h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--bark);
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+    .pain-card p {
+      font-size: 0.84rem;
+      color: var(--bark-mid);
+      line-height: 1.9;
+    }
+
+    /* ── SOLUTION ── */
+    .solution { background: var(--bg); }
+    .solution-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .solution-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 32px 28px;
+      text-align: center;
+      transition: box-shadow 0.2s ease-out, transform 0.2s ease-out;
+    }
+    .solution-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+      transition: box-shadow 0.4s ease-out, transform 0.4s ease-out;
+    }
+    .solution-icon {
+      width: 64px; height: 64px;
+      margin: 0 auto 16px;
+      background: var(--flame-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+    }
+    .solution-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .solution-card p {
+      font-size: 0.84rem;
+      color: var(--bark-mid);
+      line-height: 1.9;
+    }
+
+    /* ── PRODUCTS ── */
+    .products { background: var(--surface); }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .product-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      overflow: hidden;
+      transition: box-shadow 0.2s ease-out;
+    }
+    .product-card:hover {
+      box-shadow: var(--shadow-md);
+      transition: box-shadow 0.4s ease-out;
+    }
+    .product-img {
+      height: 180px;
+      background: var(--sand-light);
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--bark-light);
+      font-size: 0.8rem;
+    }
+    .product-body { padding: 20px; }
+    .product-body h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .product-price {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--flame);
+    }
+    .product-price span { font-size: 0.75rem; color: var(--bark-mid); font-weight: 400; }
+    .product-body p {
+      font-size: 0.8rem;
+      color: var(--bark-mid);
+      margin-top: 6px;
+      line-height: 1.7;
+    }
+
+    /* ── HOW（買い方） ── */
+    .howto { background: var(--bg); }
+    .howto-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .howto-step {
+      text-align: center;
+      padding: 24px 16px;
+    }
+    .howto-num {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--flame);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .howto-step h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .howto-step p {
+      font-size: 0.82rem;
+      color: var(--bark-mid);
+      line-height: 1.8;
+    }
+
+    /* ── VOICE ── */
+    .voice { background: var(--surface); }
+    .voice-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .voice-card {
+      background: var(--cream);
+      border-radius: var(--r);
+      padding: 28px 24px;
+      position: relative;
+    }
+    .voice-card::before {
+      content: '\201C';
+      font-family: 'Shippori Mincho', serif;
+      font-size: 3rem;
+      color: var(--sand);
+      position: absolute;
+      top: 12px; left: 20px;
+      line-height: 1;
+    }
+    .voice-card blockquote {
+      font-size: 0.88rem;
+      color: var(--bark-mid);
+      line-height: 2;
+      margin: 0;
+      padding-top: 16px;
+      border: none;
+    }
+    .voice-meta {
+      margin-top: 12px;
+      font-size: 0.75rem;
+      color: var(--bark-light);
+    }
+
+    /* ── EVENT ── */
+    .event {
+      background: var(--bark);
+      color: #fff;
+    }
+    .event .section-heading { color: #fff; }
+    .event .section-sub { color: rgba(255,255,255,0.6); }
+    .event-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .event-img {
+      height: 300px;
+      background: rgba(255,255,255,0.06);
+      border-radius: var(--r);
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.3);
+      font-size: 0.85rem;
+    }
+    .event-text h3 {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .event-text p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 2;
+      margin-bottom: 12px;
+    }
+
+    /* ── STORY ── */
+    .story { background: var(--cream); }
+    .story-inner {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .story-img {
+      height: 320px;
+      background: var(--sand-light);
+      border-radius: var(--r);
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--bark-light);
+      font-size: 0.82rem;
+    }
+    .story-text p {
+      font-size: 0.9rem;
+      color: var(--bark-mid);
+      line-height: 2.1;
+      margin-bottom: 14px;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: linear-gradient(160deg, var(--bark) 0%, #2A1E14 100%);
+      color: #fff;
+      text-align: center;
+      padding: 80px 24px;
+    }
+    .cta-section .section-heading { color: #fff; }
+    .cta-section p { color: rgba(255,255,255,0.65); margin-bottom: 28px; }
+    .cta-badges {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .cta-badge {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* ── ACCESS ── */
+    .access { background: var(--surface); }
+    .access-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    .access-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .access-table th,
+    .access-table td {
+      text-align: left;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+      vertical-align: top;
+    }
+    .access-table th {
+      color: var(--bark-light);
+      font-weight: 500;
+      width: 110px;
+      padding-right: 16px;
+    }
+    .access-map {
+      background: var(--sand-light);
+      border-radius: var(--r);
+      height: 100%;
+      min-height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--bark-light);
+      font-size: 0.82rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bark);
+      color: rgba(255,255,255,0.45);
+      padding: 28px 24px;
+      text-align: center;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .section-pad { padding: 56px 0; }
+      .section-heading { font-size: 1.35rem; }
+      nav a:not(.nav-cta) { display: none; }
+      .hero-content { padding: 100px 20px 60px; }
+      .hero-catch { font-size: 1.6rem; }
+      .hero-price-num { font-size: 1.8rem; }
+      .event-content { grid-template-columns: 1fr; gap: 24px; }
+      .event-img { height: 220px; }
+      .story-inner { grid-template-columns: 1fr; }
+      .story-img { height: 240px; }
+      .access-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── SCROLL ANIMATION ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">MAKIBO</a>
+    <nav>
+      <a href="#products">商品</a>
+      <a href="#howto">買い方</a>
+      <a href="#event">イベント</a>
+      <a href="#access">アクセス</a>
+      <a href="#cta" class="nav-cta" data-cta="header">薪を買いに行く</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-bg" role="img" aria-label="積み上げられた広葉樹の薪と焚き火のあるキャンプサイト"></div>
+  <div class="hero-content">
+    <span class="hero-badge">無人販売 / QR決済OK</span>
+    <h1 class="hero-catch">広葉樹<span class="sm">の</span>薪<span class="sm">が</span><br>1束500円<span class="sm">から。</span><br><span class="sm">もう</span>薪<span class="sm">で</span>損<span class="sm">しない。</span></h1>
+    <p class="hero-sub">
+      ホームセンターの薪、高いのにすぐ燃え尽きていませんか？<br>
+      MAKIBOの広葉樹薪は、独自仕入れルートだから業界最安クラス。<br>
+      火持ちの良い薪で、焚き火の時間をもっと長く。
+    </p>
+    <div class="hero-price">
+      <span class="hero-price-label">広葉樹 1束</span>
+      <span class="hero-price-num">500</span>
+      <span class="hero-price-unit">円〜（税込）</span>
+    </div>
+    <div class="hero-tags">
+      <span class="hero-tag">24時間購入OK</span>
+      <span class="hero-tag">QR決済対応</span>
+      <span class="hero-tag">広葉樹専門</span>
+      <span class="hero-tag">業界最安クラス</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#access" class="btn btn-primary" data-cta="hero">場所を確認する</a>
+      <a href="#products" class="btn btn-outline-w">商品を見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── PAIN（悩み共感） ── -->
+<section class="pain section-pad">
+  <div class="container text-center">
+    <span class="section-label fade-up">Your Frustration</span>
+    <h2 class="section-heading fade-up">キャンプ<span class="sm">の</span>薪、<br><span class="sm">こんな</span>不満<span class="sm">ありませんか？</span></h2>
+    <p class="section-sub fade-up">週末のキャンプを楽しみにしているのに、薪の問題でモヤモヤしていませんか。</p>
+    <div class="pain-grid">
+      <div class="pain-card fade-up">
+        <h4>ホームセンターの薪、高い。</h4>
+        <p>1束700〜1,000円。家族キャンプで一晩分となると3〜4束は必要。それだけで3,000円超え。薪代だけでけっこう痛い出費に。</p>
+      </div>
+      <div class="pain-card fade-up">
+        <h4>なのに、すぐ燃え尽きる。</h4>
+        <p>針葉樹中心の薪は火付きは良いけれど、あっという間に灰に。せっかくの焚き火タイムが「薪くべ作業」になってしまう。</p>
+      </div>
+      <div class="pain-card fade-up">
+        <h4>キャンプ場の薪は割高。</h4>
+        <p>現地で買うとさらに高い。かといって事前に買いに行く時間もない。もっと手軽に、もっと安く手に入れたい。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SOLUTION（解決策） ── -->
+<section class="solution section-pad">
+  <div class="container text-center">
+    <span class="section-label fade-up">Solution</span>
+    <h2 class="section-heading fade-up">MAKIBO<span class="sm">なら</span>、<span class="sm">ぜんぶ</span>解決<span class="sm">します。</span></h2>
+    <p class="section-sub fade-up">独自の原木仕入れルートと本業とのシナジーで、<br>「安い・火持ちが良い・いつでも買える」を実現しました。</p>
+    <div class="solution-grid">
+      <div class="solution-card fade-up">
+        <div class="solution-icon">&#127794;</div>
+        <h4>広葉樹1束500円〜</h4>
+        <p>独自ルートで原木を直接仕入れ、本業との掛け合わせでコストを徹底圧縮。業界最安クラスの価格を実現しています。</p>
+      </div>
+      <div class="solution-card fade-up">
+        <div class="solution-icon">&#128293;</div>
+        <h4>火持ちが段違い</h4>
+        <p>広葉樹は針葉樹の約2〜3倍の燃焼時間。薪くべの回数が減り、焚き火をゆっくり楽しむ時間が増えます。</p>
+      </div>
+      <div class="solution-card fade-up">
+        <div class="solution-icon">&#128337;</div>
+        <h4>24時間 無人販売</h4>
+        <p>好きな時間に立ち寄って、QR決済でサッと購入。早朝出発のキャンプでも、仕事帰りの買い出しでもOK。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRODUCTS（商品ラインナップ） ── -->
+<!-- ※補完：Q12が未記入のため、業態・価格帯から推測して構成しています -->
+<section class="products section-pad" id="products">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label fade-up">Products</span>
+      <h2 class="section-heading fade-up">薪<span class="sm">の</span>ラインナップ</h2>
+      <p class="section-sub fade-up">キャンプスタイルに合わせて選べる薪をご用意しています。</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card fade-up">
+        <div class="product-img" role="img" aria-label="束ねられた広葉樹の薪（ナラ・クヌギ）">
+          [広葉樹 薪写真]
+        </div>
+        <div class="product-body">
+          <h4>広葉樹ミックス</h4>
+          <div class="product-price">500<span>円〜 / 1束</span></div>
+          <p>ナラ・クヌギなど火持ち抜群の広葉樹ミックス。焚き火・BBQに最適。</p>
+        </div>
+      </div>
+      <div class="product-card fade-up">
+        <div class="product-img" role="img" aria-label="桜の原木・薪">
+          [桜 薪写真]
+        </div>
+        <div class="product-body">
+          <h4>桜の薪</h4>
+          <div class="product-price">要問合せ</div>
+          <p>燻製やスモークにも人気の桜材。グリーンウッドワークの素材としても好評。</p>
+        </div>
+      </div>
+      <div class="product-card fade-up">
+        <div class="product-img" role="img" aria-label="個性的な形のビザールプランツ（塊根植物）">
+          [ビザールプランツ写真]
+        </div>
+        <div class="product-body">
+          <h4>ビザールプランツ</h4>
+          <div class="product-price">各種取扱中</div>
+          <p>塊根植物・コーデックスなど個性的な植物も販売中。薪を買いに来たついでにぜひ。</p>
+        </div>
+      </div>
+      <div class="product-card fade-up">
+        <div class="product-img" role="img" aria-label="原木・丸太のまとめ買いイメージ">
+          [原木写真]
+        </div>
+        <div class="product-body">
+          <h4>原木・まとめ買い</h4>
+          <div class="product-price">要問合せ</div>
+          <p>薪ストーブ用の大量購入にも対応。原木のままの販売もご相談ください。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOWTO（買い方ガイド） ── -->
+<section class="howto section-pad" id="howto">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label fade-up">How to Buy</span>
+      <h2 class="section-heading fade-up">無人販売<span class="sm">の</span>買<span class="sm">い</span>方</h2>
+      <p class="section-sub fade-up">24時間いつでもOK。3ステップで完了します。</p>
+    </div>
+    <div class="howto-steps">
+      <div class="howto-step fade-up">
+        <div class="howto-num">01</div>
+        <h4>MAKIBOに来る</h4>
+        <p>営業時間を気にせず、好きなタイミングで立ち寄ってください。</p>
+      </div>
+      <div class="howto-step fade-up">
+        <div class="howto-num">02</div>
+        <h4>薪を選ぶ</h4>
+        <p>広葉樹ミックスなどお好みの薪を必要な分だけ選びます。</p>
+      </div>
+      <div class="howto-step fade-up">
+        <div class="howto-num">03</div>
+        <h4>QR決済で支払い</h4>
+        <p>QRコードを読み取って決済完了。現金不要で手軽に購入できます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── VOICE（お客様の声） ── -->
+<section class="voice section-pad">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label fade-up">Voice</span>
+      <h2 class="section-heading fade-up"><span class="sm">お客様の</span>声</h2>
+    </div>
+    <div class="voice-grid">
+      <div class="voice-card fade-up">
+        <blockquote>無人販売でQR決済ができてよかったです！広葉樹が1束500円ですごくお安いのでまた利用させていただきます！</blockquote>
+        <div class="voice-meta">キャンプ愛用者のお客様</div>
+      </div>
+      <div class="voice-card fade-up">
+        <blockquote>貴重な桜の原木を譲って頂きました。グリーンウッドワークに活用させて頂きます。親切なご対応ありがとうございました。</blockquote>
+        <div class="voice-meta">木工クラフトのお客様</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EVENT（イベント） ── -->
+<section class="event section-pad" id="event">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label fade-up" style="color:rgba(255,255,255,0.35);">Event</span>
+      <h2 class="section-heading fade-up">薪<span class="sm">を</span>買<span class="sm">うだけじゃない。</span><br>MAKIBO<span class="sm">は</span>遊<span class="sm">び</span>場<span class="sm">です。</span></h2>
+    </div>
+    <div class="event-content">
+      <div class="event-img fade-up" role="img" aria-label="MAKIBOで開催されたイベントの様子">
+        [イベント写真]
+      </div>
+      <div class="event-text fade-up">
+        <h3>いつも楽しいイベント<span class="sm">を</span>開催中</h3>
+        <p>MAKIBOでは薪の販売だけでなく、キャンプ好き・アウトドア好きが集まるイベントを定期的に開催しています。</p>
+        <p>薪割り体験、焚き火カフェ、ビザールプランツの展示販売会など、来るたびに新しい発見がある場所を目指しています。</p>
+        <p>最新のイベント情報はSNSでチェックしてください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STORY（MAKIBOの想い） ── -->
+<!-- ※補完：Q21・Q30が未記入のため、Q9の強みから推測して構成しています -->
+<section class="story section-pad">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label fade-up">Our Story</span>
+      <h2 class="section-heading fade-up">MAKIBO<span class="sm">のこと</span></h2>
+    </div>
+    <div class="story-inner">
+      <div class="story-img fade-up" role="img" aria-label="MAKIBOの薪置き場とオーナーの写真">
+        [オーナー写真]
+      </div>
+      <div class="story-text fade-up">
+        <p>MAKIBOは「もっと気軽に、もっと安く、良い薪を届けたい」という想いから生まれました。</p>
+        <p>本業で培った独自の原木仕入れルートがあるからこそ、他社にはできない価格設定が実現できています。本業とのシナジーでコストを抑えながら、品質は一切妥協しない。それがMAKIBOのやり方です。</p>
+        <p>さらに、薪だけでなくビザールプランツの販売や楽しいイベントの開催を通じて、「ここに来ると何かある」と思ってもらえる場所をつくっています。</p>
+        <p>薪を買うだけの場所ではなく、アウトドア好きの拠点でありたい。MAKIBOはこれからも進化し続けます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-section" id="cta">
+  <div class="container">
+    <span class="section-label fade-up" style="color:rgba(255,255,255,0.3);">Visit Us</span>
+    <h2 class="section-heading fade-up">広葉樹1束500円<span class="sm">から。</span><br><span class="sm">まずは</span>一度、<span class="sm">来てみてください。</span></h2>
+    <p class="fade-up">24時間営業の無人販売。QR決済で手ぶらでOK。</p>
+    <div class="cta-badges fade-up">
+      <span class="cta-badge">24時間購入OK</span>
+      <span class="cta-badge">QR決済対応</span>
+      <span class="cta-badge">広葉樹1束500円〜</span>
+      <span class="cta-badge">ビザールプランツも</span>
+    </div>
+    <div class="fade-up">
+      <a href="#access" class="btn btn-primary" data-cta="cta-main" style="font-size:1rem;padding:18px 44px;">アクセスを確認する</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── ACCESS ── -->
+<!-- ※補完：住所・電話番号等は仮です。実際の情報に差し替えてください -->
+<section class="access section-pad" id="access">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label fade-up">Access</span>
+      <h2 class="section-heading fade-up">アクセス・店舗情報</h2>
+    </div>
+    <div class="access-grid">
+      <table class="access-table fade-up">
+        <tr><th>店舗名</th><td>MAKIBO</td></tr>
+        <tr><th>事業内容</th><td>薪販売（無人販売）・ビザールプランツ販売</td></tr>
+        <tr><th>所在地</th><td>※実際の住所を入力してください</td></tr>
+        <tr><th>営業時間</th><td>24時間（無人販売）</td></tr>
+        <tr><th>決済方法</th><td>QR決済</td></tr>
+        <tr><th>駐車場</th><td>※台数を入力してください</td></tr>
+      </table>
+      <div class="access-map fade-up" role="img" aria-label="MAKIBOの所在地を示すGoogleマップ">
+        [Google Map 埋め込み]
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p>&copy; MAKIBO All Rights Reserved.</p>
+</footer>
+
+<!-- ── JS ── -->
+<script>
+  // Scroll fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const t = document.querySelector(this.getAttribute('href'));
+      if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+</body>
+</html>
